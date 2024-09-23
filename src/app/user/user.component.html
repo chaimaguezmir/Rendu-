@@ -1,0 +1,11 @@
+<p>user works!</p>
+<input name="color" [(ngModel)]="color" >
+<div [style.color]="color">{{ titre }}</div>
+{{ titre }}
+{{ person.id }}
+{{ person.name }}
+{{ person.age }}
+<button [disabled]="quantity <= 0" (click)="acheter()">Active</button><br />
+<br />
+{{ quantity }}<br />
+<img [src]="image" [height]="height" />
