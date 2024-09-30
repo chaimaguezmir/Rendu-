@@ -13,12 +13,12 @@ export class UserComponent {
   image = '/assets/test.jpg';
   height = 200;
   width = 200;
-  color = 'blue';
+  Color = 'blue';
   acheter() {
     this.quantity--;
   }
   onInputChange(event: Event) {
     const el = event.target as HTMLInputElement;
-    this.color = el.value;
+    this.Color = el.value;
   }
 }

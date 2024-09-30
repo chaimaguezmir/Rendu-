@@ -1,1 +1,31 @@
-<p>list-categories works!</p>
+<div class="container">
+  <div class="row">
+    Search:
+    <input
+      class="form-control"
+      name="title"
+      style="margin-bottom: 30px"
+      [(ngModel)]="title"
+      placeholder="Rechercher par titre"
+    />
+
+    <div
+      *ngFor="let c of categories | filter : title"
+      class="col-md-4"
+      style="margin-bottom: 20px"
+      appHighlight
+    >
+      <img
+        [src]="c.image"
+        class="card-img-top"
+        (click)="afficherDescription(c.id)"
+        alt="{{ c.title }}"
+      />
+
+      <h3>{{ c.title | uppercase }}</h3>
+
+      <button *ngIf="c.available" class="btn btn-primary">Voir produits</button>
+      <p *ngIf="!c.available">Catégorie non disponible</p>
+    </div>
+  </div>
+</div>
